@@ -1,0 +1,14 @@
+GET http://localhost:8080/hello
+
+###
+GET http://localhost:8080/api/sendCode?phone=18735155023
+
+###
+POST  http://localhost:8080/api/login_sms
+Accept: application/json
+Content-Type: application/json
+
+{
+  "phone": "18735155023",
+  "code": "123456"
+}
