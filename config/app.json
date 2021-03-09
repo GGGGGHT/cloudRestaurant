@@ -5,9 +5,9 @@
   "app_port": "8080",
   "sms": {
     "sign_name": "ght测试",
-    "template_name": "SMS_212702617",
-    "app_key": "LTAI4G3zgWxJ4YeHpq9Lpsp6",
-    "app_secret": "Fzw92XpueDA5XKNDqLlEjFVuCebD0o",
+    "template_name": "模板名称",
+    "app_key": "key",
+    "app_secret": "secret",
     "regoin_id": "cn_hangzhou"
   },
   "database": {
