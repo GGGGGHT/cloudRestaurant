@@ -7,12 +7,13 @@ import (
 )
 
 type Config struct {
-	AppName string         `json:"app_name"`
-	AppMode string         `json:"app_mode"`
-	AppHost string         `json:"app_host"`
-	AppPort string         `json:"app_port"`
-	Sms     SmsConfig      `json:"sms"`
-	Db      DatabaseConfig `json:"database"`
+	AppName     string         `json:"app_name"`
+	AppMode     string         `json:"app_mode"`
+	AppHost     string         `json:"app_host"`
+	AppPort     string         `json:"app_port"`
+	Sms         SmsConfig      `json:"sms"`
+	Db          DatabaseConfig `json:"database"`
+	RedisConfig RedisConfig    `json:"redis"`
 }
 
 type SmsConfig struct {
@@ -32,6 +33,13 @@ type DatabaseConfig struct {
 	DbName   string `json:"db_name"`
 	Charset  string `json:"charset"`
 	ShowSQL  bool   `json:"show_sql"`
+}
+
+type RedisConfig struct {
+	Addr     string `json:"addr"`
+	Port     string `json:"port"`
+	Password string `json:"password"`
+	Db       int    `json:"db"`
 }
 
 var _cfg *Config

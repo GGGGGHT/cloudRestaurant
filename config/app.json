@@ -19,5 +19,11 @@
     "db_name": "cloudrestaurant",
     "charset": "utf8",
     "show_sql": true
+  },
+  "redis": {
+    "addr": "192.168.3.104",
+    "port": "6379",
+    "password": "123",
+    "db": 0
   }
 }
