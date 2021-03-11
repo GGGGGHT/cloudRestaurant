@@ -91,3 +91,33 @@ func (mc *MemberService) SmsLogin(param *param.SmsLoginParam) *model.Member {
 
 	return member
 }
+
+func (mc *MemberService) PwdLogin(name, password string) *model.Member {
+	// 用户存在   使用用户名+密码查询用户信息 如果存在直接返回
+	md := dao.MemberDao{Orm: tool.DbEngine}
+	member := md.Query(name, password)
+	if member != nil && member.Id != 0 {
+		return member
+	}
+
+	user := &model.Member{
+		UserName:     name,
+		Password:     tool.EncoderSha256(password),
+		RegisterTime: time.Now().Unix(),
+	}
+	// 用户不存在 作为新用户插入
+	res := md.AddMember(user)
+	user.Id = res
+
+	return user
+}
+
+func (mc *MemberService) UploadAvatar(id int64, name string) string {
+	memberDao := dao.MemberDao{Orm: tool.DbEngine}
+	result := memberDao.UpdateMemberAvatar(id, name)
+	if 0 == result {
+		return ""
+	}
+
+	return name
+}

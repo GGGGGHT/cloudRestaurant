@@ -12,3 +12,21 @@ Content-Type: application/json
   "phone": "18735155023",
   "code": "123456"
 }
+
+
+###
+GET http://localhost:8080/api/captcha
+
+###
+POST http://localhost:8080/api/login_pwd
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name":"wangzheng",
+  "pwd": "123",
+  "id": "BCGbbBSM6banBdtNRczH",
+  "value": "14zwvd"
+}
+
+###

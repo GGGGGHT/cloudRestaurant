@@ -46,3 +46,26 @@ func (md *MemberDao) AddMember(member *model.Member) int64 {
 
 	return res
 }
+
+func (md *MemberDao) Query(name, password string) *model.Member {
+	var member model.Member
+
+	if _, err := md.Where("user_name = ? and password = ?", name, tool.EncoderSha256(password)).Get(&member); err != nil {
+		fmt.Println(err.Error())
+	}
+
+	return &member
+}
+
+func (md *MemberDao) UpdateMemberAvatar(id int64, name string) int64 {
+	member := &model.Member{
+		Avatar: name,
+	}
+	res, err := md.Where("id = ?", id).Update(member)
+	if err != nil {
+		fmt.Println(err.Error())
+		return 0
+	}
+
+	return res
+}

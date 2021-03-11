@@ -22,6 +22,7 @@ func main() {
 	tool.InitRedisStore()
 
 	app := gin.Default()
+	tool.InitSession(app)
 	registerRoute(app)
 	// 设置全局跨域访问
 	app.Use(Cors())
