@@ -30,7 +30,7 @@ func (md *MemberDao) ValidateSmsCode(phone, code string) *model.SmsCode {
 func (md *MemberDao) GetMemberByPhone(phone string) *model.Member {
 	var member model.Member
 
-	if _, err := md.Where("Mobile = ?", phone).Get(&member);err != nil {
+	if _, err := md.Where("Mobile = ?", phone).Get(&member); err != nil {
 		fmt.Println(err.Error())
 	}
 
@@ -38,7 +38,7 @@ func (md *MemberDao) GetMemberByPhone(phone string) *model.Member {
 }
 
 func (md *MemberDao) AddMember(member *model.Member) int64 {
-	res, err := md.InsertOne(member);
+	res, err := md.InsertOne(member)
 	if err != nil {
 		fmt.Println(err.Error())
 		return 0
