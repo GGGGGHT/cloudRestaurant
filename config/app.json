@@ -1,29 +1,2 @@
 {
-  "app_name": "cloudrestaurant",
-  "app_mode": "debug",
-  "app_host": "localhost",
-  "app_port": "8080",
-  "sms": {
-    "sign_name": "ght测试",
-    "template_name": "模板名称",
-    "app_key": "key",
-    "app_secret": "secret",
-    "regoin_id": "cn_hangzhou"
-  },
-  "database": {
-    "user": "root",
-    "password": "root",
-    "host": "192.168.3.104",
-    "port": "3306",
-    "driver": "mysql",
-    "db_name": "cloudrestaurant",
-    "charset": "utf8",
-    "show_sql": true
-  },
-  "redis": {
-    "addr": "192.168.3.104",
-    "port": "6379",
-    "password": "123",
-    "db": 0
-  }
 }
